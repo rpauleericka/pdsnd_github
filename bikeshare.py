@@ -2,21 +2,22 @@ import time
 import pandas as pd
 import numpy as np
 
+# here are the data files that will be imported
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york': 'new_york_city.csv',
               'washington': 'washington.csv' }
-
+# First Question to be asked to filter the datasets by City
 cityQuestion = 'Would you like to see data for Chicago, New York, or Washington?\n'
 cities = ['chicago', 'new york','washington']
-
+# Second Question to be asked to determine timeframe on which we 'll do data analysis: month, day, both or none
 dateFilterQuestion = 'Would you like to filter the data by month, day, both or not at all? Type "none" for no time filter\n'
 dateFilters = ['month','day','both','none']
-
+# If the User chose month, we will ask the month
 monthFilterQuestion = 'Which month? January, February, March, April, May, or June?\n'
 months = ['january','february','march','april','may','june']
-
+# If the User chose day, we will ask the day as an integer 1 = Sunday,2 = Monday,3 = Tuesday,4 = Wednesday,5 = Thursday,6 = Friday,7 = Saturday
 dayFilterQuestion = 'Which day? Please type your response as an integer (e.g., 1 = Sunday,2 = Monday,3 = Tuesday,4 = Wednesday,5 = Thursday,6 = Friday,7 = Saturday)\n'
-days = np.arange(1,8)
+days = np.arange(1,8) # array of weekdays from 1 to 7
 
 def toFind(question,answersArray,errormsg="Not a valid input! Please try again",typeMustBe="str"):
     """
