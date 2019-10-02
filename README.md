@@ -13,5 +13,5 @@ Bikeshare is a python project which analyze US Bikeshare Data for three major ci
 * washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+* https://stackoverflow.com/questions/47136436/python-pandas-convert-value-counts-output-to-dataframe
+* https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_json.html#pandas.DataFrame.to_json
