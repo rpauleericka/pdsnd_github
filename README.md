@@ -1,11 +1,11 @@
 ### Date created
-Include the date you created this project and README file.
+02 October 2019
 
 ### Project Title
-Replace the Project Title
+Bikeshare
 
 ### Description
-Describe what your project is about and what it does
+Bikeshare is a python project which analyze US Bikeshare Data for three major cities in the United States—Chicago, New York City, and Washington.
 
 ### Files used
 Include the files used
