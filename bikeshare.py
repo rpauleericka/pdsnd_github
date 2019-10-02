@@ -19,7 +19,7 @@ months = ['january','february','march','april','may','june']
 dayFilterQuestion = 'Which day? Please type your response as an integer (e.g., 1 = Sunday,2 = Monday,3 = Tuesday,4 = Wednesday,5 = Thursday,6 = Friday,7 = Saturday)\n'
 days = np.arange(1,8) # array of weekdays from 1 to 7
 
-def toFind(question,answersArray,errormsg="Not a valid input! Please try again",typeMustBe="str"):
+def checkUserInput(question,answersArray,errormsg="Not a valid input! Please try again",typeMustBe="str"):
     """
     Asks user input which have a certain type.
 
@@ -63,25 +63,25 @@ def get_filters():
     strConfirm = 'We will make sure to filter by '
 
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    city = toFind(cityQuestion,cities)
+    city = checkUserInput(cityQuestion,cities)
     print('Looks like you want to hear about {}! If this is not true, restart the program now!\n'.format(city))
 
     #get user input for date filter: month, day, both,none
-    dateFilter = toFind(dateFilterQuestion,dateFilters)
+    dateFilter = checkUserInput(dateFilterQuestion,dateFilters)
     print(strConfirm+dateFilter+'\n')
 
     # print(dateFilter)
     if dateFilter == 'month':
         # get user input for month (all, january, february, ... , june)
-        month = toFind(monthFilterQuestion,months)
+        month = checkUserInput(monthFilterQuestion,months)
     elif dateFilter == 'day':
         # get user input for day of week (all, monday, tuesday, ... sunday)
-        day = toFind(question=dayFilterQuestion,answersArray=days,typeMustBe=7)
+        day = checkUserInput(question=dayFilterQuestion,answersArray=days,typeMustBe=7)
     elif dateFilter == 'both':
         # get user input for month (all, january, february, ... , june)
-        month = toFind(monthFilterQuestion,months) 
+        month = checkUserInput(monthFilterQuestion,months) 
         # get user input for day of week (all, monday, tuesday, ... sunday)
-        day = toFind(question=dayFilterQuestion,answersArray=days,typeMustBe=7)
+        day = checkUserInput(question=dayFilterQuestion,answersArray=days,typeMustBe=7)
     print('-'*40)
     return city, month, day
 
